@@ -1,0 +1,245 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1
+\usepackage{jcappub}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphics,graphicx}
+
+\graphicspath{{figures/},{lattice_scripts/}}
+
+\begin{document}
+
+\title{Implications of Large Field Inflation for Preheating}
+\author[a]{J. Richard Bond}
+\author[a,b]{Jonathan Braden}
+\author[c]{Andrei Frolov}
+\author[a]{Zhiqi Huang}
+\affiliation[a]{CITA}
+\affiliation[b]{Dept. of Physics, U of T}
+\affiliation[c]{Simon Fraser University}
+
+\emailAdd{bond@cita.utoronto.ca}
+\emailAdd{jbraden@cita.utoronto.ca}
+\emailAdd{frolov@sfu.ca}
+\emailAdd{zqhuang@cita.utoronto.ca}
+
+\abstract{BLAH BLAH}
+\date{\today}
+\maketitle
+
+\section{Introduction}
+BLAH BLAH BLAH
+\begin{itemize}
+  \item Given a large b-mode detection, assume that given a collection of conformal transformations, field redefinitions, etc. we can obtain an effective single-field description of the inflaton which is of the same simple monomial form near the minimum of the potential as on the inflationary plateau.
+  \item Given this assumption, we will consider various couplings between the inflaton and some additional scalar degrees of freedom
+\end{itemize}
+Without a specific high-energy model for the inflaton, one cannot in general connect the post-inflationary potential to the inflationary plateau that is relevant when physically observable scales were exiting the horizon.
+However, a detection of $r$ indicates that the field traversed a Planckian distance in field space.
+It is not unreasonable to assume that after inflation the field will undergo damped oscillations around the minimum of its potential with an initial amplitude that is Planckian.
+A natural question is then what the implications of such large amplitude oscillations are for any fields that couple to the inflaton.
+This question has been extensively explored for potential couplings between the inflaton and a few other fields that we will denote as preheat fields.
+However, much less is known about the dynamiccs in the case that there are many preheat fields, or many additional fields coupled to the preheat fields but not directly to the inflaton.
+As well, the effect of couplings through noncanonical kinetic terms are also relatively unexplored.
+
+BLAH BLAH BLAH
+First we'll consider noncanonical couplings between the inflaton and a single preheat field.
+Second, we'll look at (potential) couplings between the inflaton and many fields and the inflaton and a single field which itself couples to many other fields.
+
+\section{Noncanonical Couplings to Preheat Fields}
+In this first section we consider some specific examples from the class of Lagrangians
+\begin{equation}
+  \frac{\mathcal{L}}{\sqrt{g}} = -\frac{\partial_\mu\phi\partial^\mu\phi}{2} - V^{inf}(\phi) - G(\phi)\frac{\partial_\mu\chi\partial^\mu\chi}{2} - W(\chi) - U_{coup}(\phi,\chi)
+\end{equation}
+where we assume $V_\phi(\phi) \sim \phi^q$ and $\phi_{end} \sim M_P$.
+Our assumption of large amplitude oscillations for the inflaton $\phi$ means that initially we will have $\phi \approx \phi_0f(t)/a^p$ with $\phi_0 \sim M_P$, $f(t)$ a periodic function and $p$ the exponent describing damping of the fluctuations due to expansion.
+
+These types of actions can arise after an appropriate conformal transformation and field redefinition for nonminimal gravitational couplings, or between a modulus field $\phi$ and axion $\chi$.
+{\bf Do these models give large field inflation with detectable $r$?}
+The case $G(\phi)=1$ and $U_{coup}(\phi,\chi)$ some low order polynomial in the fields has been well studied in the literature and leads to a range of interesting instabilities for the field fluctuations.
+%As some specific examples that lead to these types of actions, we could have $\phi$ nonminimally coupled to gravity $\Omega^2(\phi)\frac{M_P^2}{2}R$, in which case $G=\Omega^{-2}$ and $W+U = \omega^{-4}(W_{bare}+U_{bare})$.
+%Some widespread examples that lead to such couplings are nonminimal coupling between the inflaton $\phi$ and the Ricci scalar, supergravity descriptions of inflation, and couplings between moduli and axion fields in string theory.  {\bf Are the last two really independent?}
+
+%Given these theoretical motivations, we will consider three general classes of couplings between the inflaton and $\chi$
+%\begin{itemize}
+%  \item Coupling only via the noncanonical kinetic term
+%  \item Coupling via an overall multiplier of the $\chi$ Lagrangian (as happens with nonminimally coupled gravity models in the Einstein frame (thus enforcing a relationship between the kinetic and potential couplings)
+%  \item Direct coupling through a potential not associated with an overall multiplier
+%\end{itemize}
+%Most nonlinear studies of preheating have focussed on only the third option (but see~\ref{Zhiqi_modular,Giblin_gauge}.
+%Within these broad classes, we can further distinguish cases where $\chi$ has it's own potential
+
+\section{Noncanonical Couplings to a Massless Field}
+Since potential couplings have been the object of many past studies, 
+we will first focus on models with $U_{coup} = 0$.
+To maintain some small level of generality, we will consider several possible forms for the noncanonical coupling G:
+$G(\phi) = (1+\xi\phi^2)^{-1}, G(\phi)=(1+\xi\phi^2), G(\phi)=e^{\gamma\phi}$ and $G(\phi)=e^{\gamma\phi^2/2}$.
+The equation for fluctuations in $\chi$ becomes
+\begin{equation}
+  \delta\ddot{\chi} + \left(3H + (\partial_\phi\ln G)\dot{\phi}_{bg}\right)\delta\dot{\chi} + \left(\frac{k^2}{a^2} + G^{-1}(\phi)\partial_{\chi\chi}W \right)\delta\chi = 0
+\end{equation}
+with $\dot{} = d/dt$ a derivative with respect to cosmic time.
+When $\phi$ evolves in a $\lambda\phi^4$ potential, it is instead convenient to work in conformal time where the $\phi$ oscillations are periodic
+\begin{equation}
+  \delta\chi'' + \left(2\mathcal{H} + (\partial_\phi\ln G)\phi_{bg}'\right)\delta\chi' + \left(k^2 + a^2G^{-1}(\phi)\partial_{\chi\chi}W \right)\delta\chi = 0
+\end{equation}
+where $'$ denotes a derivative with respect to conformal time and $\mathcal{H} = a'/a$.
+Ignoring for the moment the expansion of the universe, fluctuations in $\chi$ behave as a damped harmonic oscillator with periodically varying coefficients.
+Therefore, we can apply Floquet theory to search for unstable solutions $\delta\chi \sim e^{\mu t}f(t)$ where $f(t)$ is a periodic function.
+This analysis can be performed on the equations as written, where it is clear that the oscillating damping term can cause exponential growth.
+However, to make contact with the rest of the literature, we will define a normalized fluctuation variable $X_k \equiv a^p\sqrt{G(\phi)}\delta\chi_k$ where $p=3/2 (1)$ in cosmic (conformal) time.
+$X_k$ then obeys the equation for a harmonic oscillator with a time-dependent frequency $X_k'' + \omega_k^2(t)X_k=0$ with
+\begin{equation}
+  \omega_k^2 = \frac{k^2}{a^2} - \ddot{\phi}_{bg}\partial_\phi\ln\sqrt{G} - \left( (\partial_\phi\ln\sqrt{G})^2 + \partial_{\phi\phi}\ln\sqrt{G}\right)\dot{\phi}_{bg}^2 + \mathrm{(a terms)}
+\end{equation}
+in cosmic time and
+\begin{equation}
+  \omega_k^2 = k^2 - \phi_{bg}''\partial_\phi\ln\sqrt{G} - \left( (\partial_\phi\ln\sqrt{G})^2 + \partial_{\phi\phi}\ln\sqrt{G}\right)\phi_{bg}'^2 - \frac{a''}{a}
+\end{equation}
+in conformal time.
+As expected, the oscillating damping term has lead to a contribution to an oscillating effective frequency that may lead to parametric resonance of the fluctuations.
+
+\subsection{$G(\phi) = e^{\gamma\phi}$}
+\begin{equation}
+  G(\phi) = e^{2\gamma\phi}
+\end{equation}
+This gives
+\begin{equation}
+  \omega_k^2 = k^2 - \gamma\ddot{\phi}_{bg} - \gamma^2\dot{\phi}_{bg}^2
+  \label{eqn:frequency_exponential}
+\end{equation}
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{sine_hill}}}
+  \includegraphics[width=0.45\linewidth]{{{lame_hill_chart}}}
+  \caption{Floquet chart for ~\eqref{eqn:frequency_exponential} assuming that the background oscillations $\phi_{bg}$ are occur in an $m^2\phi^2$ potential and are sinusoidal (\emph{left}) or are in a $\lambda\phi^4$ potential and jacobi elliptic functions (\emph{right}).{\bf Ignore the graph title on the right, the derivatives of $\phi$ were used, not $\phi$ itself.}}
+  \label{fig:floquet_exponential}
+\end{figure}
+From figure~\ref{fig:floquet_exponential} we see 
+
+\begin{figure}
+  \includegraphics[width=0.32\linewidth]{{{energy_partition_logscale_alpha3}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_fluc_alpha3}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_fluc_alpha3}}} \\
+  \includegraphics[width=0.32\linewidth]{{{energy_partition_logscale_alpha5}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_fluc_alpha5}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_fluc_alpha5}}} \\
+  \includegraphics[width=0.32\linewidth]{{{energy_partition_logscale_alpha7}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_fluc_alpha7}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_fluc_alpha7}}}
+  \caption{Evolution of the distribution of energy densities and the field fluctuations for $\gamma = $ 1.5 (\emph{top row}), 2.5 (\emph{middle row}), 3.5 (\emph{top row}) and $V(\phi) = \lambda\phi^4/4$.  $P_\alpha$ stands for the (unnormalized) power spectrum of $\alpha$.  We have defined $\rho_\phi = \frac{\dot{\phi}^2}{2a^2} + \frac{(\nabla\phi)^2}{2} + \frac{\lambda\phi^4}{4}$ and $\rho_\chi = e^{\gamma\phi}\frac{a^2\dot{\chi}^2+(\nabla\chi)^2}{2a^2}$.  For the smaller values of $\gamma$, the self-resonant instability of $\phi$ is the dominant mechanism for fluctuation generation.  For larger $\gamma$ values, the tachyonic instability in $\chi$ causes the fluctuations to become nonlinear only a {\bf few?} oscillations after the start of preheating.  {\bf Color code lines by oscillation number to make this clear} Rescattering effects then produce fluctuations in $\phi$ as well.}
+\end{figure}
+
+\subsection{$G(\phi)=e^{\gamma\phi^2/2}$}
+\begin{equation}
+  G(\phi) = e^{\gamma\phi^2/2}
+\end{equation}
+\begin{equation}
+  \omega_k^2 = k^2 - \gamma\ddot{\phi}_{bg}\phi_{bg} - (\gamma^2\phi_{bg}^2-\gamma)\dot{\phi}_{bg}^2
+\end{equation}
+\begin{figure}
+  \caption{Floquet chart for Gaussian}
+\end{figure}
+
+\subsection{$G(\phi)=(1+\xi\phi^2)^{-1}$}
+\begin{equation}
+  G(\phi) = \frac{1}{1+\xi\phi^2}
+\end{equation}
+\begin{equation}
+  \omega_k^2 = k^2 + \frac{\xi\phi_{bg}}{1+\xi\phi_{bg}^2}\ddot{\phi}_{bg} - \left(\frac{2\xi^2\phi_{bg}^2-\xi}{(1+\xi\phi_{bg}^2)^2} \right)\dot{\phi}_{bg}^2
+  \label{eqn:frequency_conformal_flatten}
+\end{equation}
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{conformal_sine}}}
+  \includegraphics[width=0.45\linewidth]{{{conformal_jacobi}}}
+  \caption{Floquet chart for the oscillations with effective frequency given by~\eqref{eqn:frequency_conformal_flatten}.  Once again, the left panel corresponds to a background oscillation in a quadratic potential and the right panel to background oscillations in a quartic potential.}
+\end{figure}
+
+\subsection{$G(\phi) = 1+\xi\phi^2$}
+\begin{equation}
+  G(\phi) = 1 + \xi\phi^2
+\end{equation}
+\begin{equation}
+  \omega_k^2 = k^2 - \frac{\xi\phi_{bg}}{1+\xi\phi_{bg}^2}\ddot{\phi}_{bg} - \left( \frac{\xi}{(1+\xi\phi_{bg}^2)^2} \right)\dot{\phi}_{bg}^2
+  \label{eqn:frequency_quadratic_kinetic}
+\end{equation}
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{running_sine}}}
+  \includegraphics[width=0.45\linewidth]{{{lame_exponential_kinetic_chart}}}
+  \caption{Floquet chart for~\eqref{eqn:frequency_quadratic_kinetic} with $\phi_{bg}$ in a quadratic potential on the left and a quartic potential on the right.}
+\end{figure}
+
+\section{Direct Potential Couplings and Caustic Formation}
+{\bf How much of this should go in here and how much in the ballistics paper?}
+Now that we have studied the effects of noncanonical couplings between the oscillating inflaton and preheat fields, 
+we return to the more familiar case of a direct potential couplings between the inflaton and the preheating fields.
+For this section we assume that the fields have canonical kinetic terms and that we can expand the potential around the minimum in a low order polynomial
+\begin{equation}
+  V(\phi,\chi_i) = 
+\end{equation}
+As a special case due to the very intriguing expansion history phenomenology,
+we will also consider minima for which there are only dimensionless couplings.
+We are especially interested in cases where the bottom of the potential posseses some flat (or nearly flat) directions.
+We consider two distinct cases:
+\begin{itemize}
+  \item Many separate fields all couple to the inflaton
+  \item A single field couples to the inflaton, which then couples to other fields
+\end{itemize}
+
+\subsection{Direct Couplings to Many Fields}
+For the first case, we thus have potentials of the form
+\begin{equation}
+  V(\phi,\chi_i) = \frac{\lambda_\phi}{4}\phi^4 + \sum\frac{g_i^2}{2}\phi^2\chi_i^2 + \sum_i\frac{\lambda_i}{4}\chi_i^4 
+\end{equation}
+where the $g_i^2$ have some distribution.
+In general, there should be additional nondiagonal cross-couplings between the $\chi$ fields, but we will not consider these.
+For the case of a single $\chi_i$, there are special values of $g^2/\lambda$ such that the zero mode of the $\chi$ field is unstable.
+If a mechanism exists to produce large-scale isocurvature fluctuations in $\chi$ prior to the start of preheating, then these large scale perturbations can be converted into adiabatic density perturbations.
+The simple question we will consider is the following, suppose that we have many $\chi_i$'s with couplings $g_i^2$ drawn from some distribution.
+We now demonstrate that the same spiky pattern of density perturbations can be produced provided we have a single $\chi_i$ whose zero-mode is unstable.
+{\bf Question: what if the arm for that $\chi_i$ is cut off.  Can the particle still bounce up into another arm}
+{\bf I've got homogeneous runs showing the caustic formation done so far, but lattice runs will presumably confirm this}
+{\bf More generally we would like to have precise conditions that allow the production of adiabatic density perturbations, but this seems rather hard in the general case}
+{\bf If we take a large number of $\chi_i$'s there is an enhancement of the rate of production of fluctuations.  Does this lead to an earlier shock, and if it does do we also lose the spikes?}
+
+\subsection{Direct Coupling to a Single Field, Coupled to Many Fields}
+For the second case we consider field potentials of the form
+\begin{equation}
+  V(\phi,\sigma_i)  \frac{\lambda}{4}\phi^4 + \frac{g^2}{2}\phi^2\left(\sum \alpha_i\sigma_i \right)^2 + V(\sigma_i)
+\end{equation}
+with $\sum_i \alpha_i^2 = 1$ and $g^2\lambda$ chosen such that the zero mode is resonant.
+Thus, the inflaton couples to only a single effective field $\tilde{\sigma} \equiv \sum_i\alpha_i\sigma_i$.
+We will further engineer $V(\sigma_i)$ to posess some arm like structures (ie. flat directions) that aren't necessarily aligned with the field $\tilde{\sigma}$.
+{\bf What are the conditions on V to get spikes?  How to expand V?}
+
+As a special case, we can consider the three field model
+\begin{equation}
+  V(\phi,\sigma_1,\sigma_2) = \frac{\lambda}{4}\phi^4 
+  + \frac{g_1^2}{2}\phi^2(\cos\theta\sigma_1+\sin\theta\sigma_2)^2
+  + \frac{g_\sigma^2}{2}\sigma_1^2\sigma_2^2 
+  + \frac{\lambda_1}{4}\sigma_1^4
+  + \frac{\lambda_2}{4}\sigma_2^4
+  \label{eqn:3field_flatdir}
+\end{equation}
+with $\theta$,$g_i^2$,$\lambda_i$ model parameters.
+When $\lambda_1=0=\lambda_2$, the $\phi$ independent part of the potential has a cross structure with two long arms along the $\sigma_1$ and $\sigma_2$ directions.
+If the fields make large excursions down these arms then spiky density perturbations can be produced.
+For $\lambda_i \neq 0$, these arms are cutoff and the homogeneous field dynamics is trapped in the bottom of the potential.
+By adjusting $\theta$, we change the alignment between the unstable field direction and the flat directions.
+
+\begin{figure}
+  \includegraphics[width=0.32\linewidth]{{{caustics_cross_l1_lcut0}}}
+  \includegraphics[width=0.32\linewidth]{{{caustics_cross_l1_lcut0.5}}}
+  \includegraphics[width=0.32\linewidth]{{{caustics_cross_l1_lcut1}}}
+  \caption{Evolution of homogeneous trajectories in the potential~\eqref{eqn:3field_flatdir}.  In all cases we took $\theta = \pi/4$, $g_1^2=2\lambda$ and $g_\sigma^2 = 2\lambda$.  From left to right we have $\lambda_2 = 0, 0.5, 1$.  The horiontal axis gives the initial amplitude of $\sigma_1^{init}$ and we took $\sigma_2^{init}=\sigma_1^{init}/10$. The color scale is $a^2H$, with white corresponding to the late-time mean over all trajectories.  {\bf What happens if we change initial conditions in  $\sigma_1,\sigma_2$ plane}}
+\end{figure}
+
+\section{Specific Models?}
+Do running kinetic Higgs model and nonminimally coupled gravity with conformal flattenning here?
+\subsection{Running Kinetic Higgs Inflation}
+\begin{equation}
+  \mathcal{L} = -\frac{1}{2}\left(1+\kappa\phi^2\right)\partial_\mu\phi\partial^\mu\phi - \lambda\frac{\phi^4}{4}
+\end{equation}
+
+\subsection{Conformally Flattenned Potentials}
+
+
+\end{document}
