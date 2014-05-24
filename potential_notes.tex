@@ -1,0 +1,123 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphics,graphicx}
+
+\graphicspath{{figures_potentials/}}
+
+\begin{document}
+
+\section{Running Quadratic Kinetic Term}
+\begin{equation}
+  \mathcal{L} = -\frac{1}{2}(1+\kappa\phi^2)\partial_\mu\phi\partial^\mu\phi - \frac{\lambda\phi^4}{4}
+\end{equation}
+The canonical field $\chi$ is determined by
+\begin{equation}
+  \frac{\partial\chi}{\partial\phi} = \sqrt{1+\kappa\phi^2}
+\end{equation}
+so that
+\begin{equation}
+  \chi = \frac{1}{2}\left(\phi\sqrt{1+\kappa\phi^2} + \kappa^{-1/2}\sinh^{-1}(\kappa^{1/2}\phi) \right)
+\end{equation}
+The number of efolds is given by
+\begin{equation}
+  N(\phi) = \int_{\phi_{end}}^{\phi} \frac{V}{\partial_\phi V}\left(\frac{\partial \chi}{\partial \phi}\right)^2 d\phi = \left[\frac{\phi^2}{8} + \frac{\kappa\phi^4}{16} \right]_{\phi_{end}}^{\phi}
+\end{equation}
+with $\phi_{end}$ determined by
+\begin{equation}
+  \epsilon_V(\phi_{end}) \equiv \frac{1}{2}\left(\frac{\partial_\chi V}{V}\right)^2 = \frac{1}{2}\left(\frac{\partial_\phi V}{V}\right)^2\left(\frac{\partial \phi}{\partial \chi}\right)^2 = \frac{8}{\phi^2(1+\kappa\phi^2)} \approx 1
+\end{equation}
+
+This model effectively turns $\lambda\phi^4$ into and $m^2\phi^2$ model at $\sqrt{\kappa}\phi \gg 1$.  More generally, it will turn a monomial potential $\phi^{2p}$ into a $\phi^p$ model.  Thus, there is no potential steepening at large field values in these models.  However, a steepening can easily be accomodated through a different choice of noncanonical kinetic modification.
+
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{running_kinetic_logAs_n60}}}
+  \includegraphics[width=0.45\linewidth]{{{running_kinetic_r_n60}}}
+%  \includegraphics[width=0.3\linewidth]{{{running_kinetic_ns}}}
+  \caption{Dependence of observables on the two model parameters $\kappa$ and $\lambda$ for the running kinetic model above.  In or from left to right we show $\log_{10}(A_s)$, $r$ and $1-n_s$.  The black line corresponds to $\log(10^{10}A_s)=-8.65$ measured by Planck.  All calculations are performed to leading order in slow-roll with quantities computed $N_e=60$ efolds before the end of inflation (in the same approximation).}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{running_kinetic_rscan_n60}}}
+  \includegraphics[width=0.45\linewidth]{{{running_kinetic_potentials_n60}}}
+  \caption{\emph{left}: Dependence of $r$ on $\kappa$ for model parameters along the line $\log_{10}(A_s)=-8.65$.  \emph{right}: Potentials as a function of canonical field variable $\phi_c$ for various choices of $\kappa$ with $\lambda$ chosen to produce the correct scalar amplitude.  Red dots correspond to the scale 60 efolds before the end of inflation, and black dots to $\epsilon_V=1$ which approximates the end of inflation.  In both cases all quantities are computed assuming they left the horizon 60 efolds before the end of inflation.}
+\end{figure}
+\begin{figure}
+  \caption{Potentials and $\epsilon$ trajectories for various choices of model parameters producing the correct amplitude of scalar perturbations.}
+\end{figure}
+
+\subsection{Running Kinetic Inflation from Supergravity}
+Following~\cite{}, we will also consider a potential of the form
+\begin{equation}
+  V(\phi) = e^{\kappa\left(\phi^{2} + \phi^{-2}\right)}\frac{\lambda}{4}\left(\phi^4 + \frac{1}{\phi^4} \right)
+\end{equation}
+For $\phi \ll \sqrt{\kappa}$, this reproduces our previous model.  However, for $\phi \gtrsim \sqrt{\kappa}$ there is an additional steepening of the potential due to the exponential term.
+
+\section{Conformally Flattened Potentials}
+\begin{equation}
+  \mathcal{L}_{Jordan} = \frac{R}{2} + \frac{\xi}{2}\phi^2R - \frac{1}{2}\partial_\mu\phi\partial^\mu\phi - \frac{\lambda\phi^4}{4}
+\end{equation}
+After a conformal transformation, we have
+\begin{equation}
+  \mathcal{L}_{Einstein} = \frac{R}{2} - \frac{1}{2}\left(\frac{1+\xi(1+6\xi)\phi^2}{(1+\xi\phi^2)^2}\right) \partial_\mu\phi\partial^\mu\phi - \frac{\lambda \phi^4}{4(1+\xi\phi^2)^2}
+\end{equation}
+for which the transformation to canonical field $\chi$ satisfies
+\begin{equation}
+  \frac{\partial \chi}{\partial \phi} = \sqrt{\frac{1+\xi(1+6\xi)\phi^2}{(1+\xi\phi^2)^2}}
+\end{equation}
+so that
+\begin{equation}
+  \chi = \frac{1}{\xi}\left(-\sqrt{6\xi^2}\tanh^{-1}\left(\frac{\phi\sqrt{6\xi^2}}{\sqrt{\xi(1+6\xi)\phi^2+1}} \right) + \sqrt{\xi(1+6\xi)}\sinh^{-1}\left(\sqrt{\xi(1+6\xi)}\phi\right) \right)
+\end{equation}
+The resulting first potential slow-roll parameter is
+\begin{equation}
+  \epsilon_V = \frac{8}{\phi^2(1+\xi(1+6\xi)\phi^2)}
+\end{equation}
+and the number of efolds until the end of inflation is
+\begin{equation}
+  N(\phi) \approx \left[\frac{1}{8}\left( (1+6\xi)\phi'^2 - 6\log(1+\xi\phi'^2) \right)\right]_{\phi_{end}}^{\phi}
+\end{equation}
+and $\epsilon_v=1$ for $\xi > 0$ gives
+\begin{equation}
+  \phi_{end}^2 = \frac{\sqrt{1+32\xi(1+6\xi)} - 1}{2\xi(1+6\xi)} \, .
+\end{equation}
+
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{conformal_flatten_logAs_n60}}}
+  \includegraphics[width=0.45\linewidth]{{{conformal_flatten_r_n60}}}
+%  \includegraphics[width=0.3\linewidth]{{{conformal_flatten_ns}}}
+  \caption{Dependence of observables on the two model parameters $\xi$ and $\lambda$ for the conformally flattenned model above.  In order from left to right we show $\log_{10}(A_s)$, $r$ and $1-n_s$.  The black line corresponds to $\log(10^{10}A_s)=-8.65$. All calculations are performed to leading order in slow-roll and assume the relevant scale exited $N_e=60$ efolds before the end of inflation within this approximation.}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{conformal_flatten_rscan_n60}}}
+  \includegraphics[width=0.45\linewidth]{{{conformal_flatten_potentials_n60}}}
+  \caption{\emph{left}:Dependence of $r$ on $\xi$ for model parameters along the line $\log_{10}(A_s)=-8.65$ for the scale that exited $N_e=60$ efolds before the end of inflation. \emph{right}: Potential as a function of the canonical field $\phi_c$ for various choices of $\xi$ with $\lambda$ chosen to satisfy the measured value of $\log_{10}(A_s)$.  The location $N_e=60$ efolds before the end of inflation and the end of inflation $\epsilon_V=1$ are indicated by red and black circles respectively.  The attractor behaviour for $\xi \gg 1$ is very clearly present in the right hand figure.}
+\end{figure}
+\begin{figure}
+  \caption{Potentials and $\epsilon$ trajectories for various choices of model parameters producing the correct amplitude of scalar perturbations.}
+\end{figure}
+
+\section{Potential Steepening}
+Here we'll retain a canonical kinetic term.  Note, however, that a similar effect (ie. steepenning) can be achieved through an appropriate choice of noncanonical field coupling.
+Following Bousso {\emph et al} and Susskind {\emph et al}, we'll consider potentials
+\begin{equation}
+  V(\phi) = V_{slowroll}(\phi) + \gamma V_{steepen}(\phi)
+\end{equation}
+where $V_{slowroll}$ is designed to give slow-roll inflation that matches standard $\Lambda$CDM as determined by Planck to match the high $\ell$ portion of the CMB data.
+The two past studies chose an exponential and a simple power for $V_{steepen}$,
+with the conclusion that the exponential was ruled out by constraints on the curvature of the universe.  {\bf Not sure exactly how this works.  They probably need to extrapolate the exponential as a good parameterization beyond the observable scales, but I don't know how they set the start of inflation which is required to get the curvature bound.  Possibly by requiring CdL tunnelling or something}.
+A seemingly obvious extension would be to consider $V_{steepen}$ be be a logarithm (or some power of a logarithm) as well.
+Basically, all that's being done in these models is to build a feature into the potential (in this case a transition between to behaviours) at some field value and then correlating that field value with a particular range of observable CMB multipoles.
+
+Also worth noting, there will be parameter ranges where this class of models will give ringing in the power spectra (very similar to Zhiqi's step model).
+The Susskind and Bousso papers only treat the slow-roll approximation so they completely miss the possibility of this effect.
+As well, if we really want to talk about bubbles, then the initial conditions have to be computed properly (by analytic continuation from the tunnelling background) and the effect of spatial curvature on the flucutations must be considered.
+
+%These papers make some claims that seem very unsubstantiated.
+%They state that generically CdL tunnelling must lead to potentials where 
+%There are many possible ways out of these apparently {\emph necessary} conclusions, all of which seem likely to be relevant in the landscape
+%\begin{itemize}
+%  \item We can have multiple fields, in which case  the argument that leads them to require a steepening of the potential is invalid.  In a landscape there are many scalars, so this is probably the generic case
+%  \item Bousso et al claim that it is impossible obtain power enhancement at large scales, and that the only feature expected from nucleation is a power suppression at small $\ell$.  Again, multiple fields could lead to excitation of heavy isocurvature modes during inflation, which could then induce a few kicks of parametric resonance in the inflaton direction.  As well, appropriate noncanonical kinetic terms can indeed lead to a power enhancement (c.f. the running quadratic kinetic model above).  Again, in a stringy landscape this is probably the more likely scenario.
+%\end{itemize}
+
+\end{document}
