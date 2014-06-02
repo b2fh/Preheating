@@ -7,9 +7,11 @@
 
 \graphicspath{{figures/},{lattice_scripts/}}
 
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+
 \begin{document}
 
-\title{Implications of Large Field Inflation for Preheating}
+\title{Preheating with Noncanonical Couplings after Large-Field Inflation}
 \author[a]{J. Richard Bond}
 \author[a,b]{Jonathan Braden}
 \author[c]{Andrei Frolov}
@@ -68,9 +70,9 @@ The case $G(\phi)=1$ and $U_{coup}(\phi,\chi)$ some low order polynomial in the 
 %Most nonlinear studies of preheating have focussed on only the third option (but see~\ref{Zhiqi_modular,Giblin_gauge}.
 %Within these broad classes, we can further distinguish cases where $\chi$ has it's own potential
 
-\section{Noncanonical Couplings to a Massless Field}
+\section{Noncanonical Couplings to an Otherwise Free Field}
 Since potential couplings have been the object of many past studies, 
-we will first focus on models with $U_{coup} = 0$.
+we will first focus on models with $U_{coup} = 0$ and $W(\chi) = m_\chi^2\chi^2/2$.
 To maintain some small level of generality, we will consider several possible forms for the noncanonical coupling G:
 $G(\phi) = (1+\xi\phi^2)^{-1}, G(\phi)=(1+\xi\phi^2), G(\phi)=e^{\gamma\phi}$ and $G(\phi)=e^{\gamma\phi^2/2}$.
 The equation for fluctuations in $\chi$ becomes
@@ -89,16 +91,45 @@ This analysis can be performed on the equations as written, where it is clear th
 However, to make contact with the rest of the literature, we will define a normalized fluctuation variable $X_k \equiv a^p\sqrt{G(\phi)}\delta\chi_k$ where $p=3/2 (1)$ in cosmic (conformal) time.
 $X_k$ then obeys the equation for a harmonic oscillator with a time-dependent frequency $X_k'' + \omega_k^2(t)X_k=0$ with
 \begin{equation}
-  \omega_k^2 = \frac{k^2}{a^2} - \ddot{\phi}_{bg}\partial_\phi\ln\sqrt{G} - \left( (\partial_\phi\ln\sqrt{G})^2 + \partial_{\phi\phi}\ln\sqrt{G}\right)\dot{\phi}_{bg}^2 + \mathrm{(a terms)}
+  \omega_k^2 = \frac{k^2}{a^2} - \ddot{\phi}_{bg}\partial_\phi\ln\sqrt{G} - \left( (\partial_\phi\ln\sqrt{G})^2 + \partial_{\phi\phi}\ln\sqrt{G}\right)\dot{\phi}_{bg}^2 + G^{-1}(\phi)\partial_{\chi\chi}W - \frac{3}{4}\left( H^2+2\frac{\ddot{a}}{a} \right)
 \end{equation}
 in cosmic time and
 \begin{equation}
-  \omega_k^2 = k^2 - \phi_{bg}''\partial_\phi\ln\sqrt{G} - \left( (\partial_\phi\ln\sqrt{G})^2 + \partial_{\phi\phi}\ln\sqrt{G}\right)\phi_{bg}'^2 - \frac{a''}{a}
+  \omega_k^2 = k^2 - \left(\phi_{bg}'' + \mathcal{H}\phi_{bg}'\right)\partial_\phi\ln\sqrt{G} - \left( (\partial_\phi\ln\sqrt{G})^2 + \partial_{\phi\phi}\ln\sqrt{G}\right)\phi_{bg}'^2 - \frac{a''}{a}
 \end{equation}
 in conformal time.
-As expected, the oscillating damping term has lead to a contribution to an oscillating effective frequency that may lead to parametric resonance of the fluctuations.
+It is convenient to define the effective mass induced by the noncanonical coupling by
+\begin{equation}
+  m^2_{eff,G} \equiv -\ddot{\phi}_{bg}\partial_\phi\ln(\sqrt{G}) - \left( (\partial_\phi\ln\sqrt{G})^2 + \partial_{\phi\phi}\ln\sqrt{G}\right)\dot{\phi}_{bg}^2
+  \label{eqn:eff_mass_G}
+\end{equation}
+As expected, the oscillating damping term has lead to a contribution to an oscillating effective frequency for the linear fluctuations.
+In~\figref{fig:eff_frequencies_sine_osc} we plot this contribution to the effective frequency, assuming the background oscillation is of the form $\phi_{bg}=\phi_0\cos(t)$, for each of our four noncanonical couplings $G(\phi)$.
+There are periods during which $m_{eff,G}^2 < 0$, indicating that tachyonic resonance can drive the production of fluctuations at $k^2 \ll a^2m_\phi^2$ in addition to broad band parametric resonance.
+When the $\phi$ instead oscillates in a $\lambda\phi^4/4$ potential, 
+the oscillations are instead of the form $a\phi(\tau) \approx \phi_0\mathrm{cn}\left(\sqrt{\lambda}M_P\tau|2^{-1}\right)$ with $\mathrm{cn}$ the Jacobi elliptic cosine function.
+The dominant spectral contribution to $\mathrm{cn}$ comes from the first harmonic, so that the resulting $m_{eff,G}^2$ is very similar to those in~\figref{fig:eff_frequencies_sine_osc}.
+\begin{figure}[h]
+  \includegraphics[width=0.24\linewidth]{{{effmass_sinebg_exponential}}}
+  \includegraphics[width=0.24\linewidth]{{{effmass_sinebg_gaussian}}}
+  \includegraphics[width=0.24\linewidth]{{{effmass_sinebg_running}}}
+  \includegraphics[width=0.24\linewidth]{{{effmass_sinebg_flatten}}}
+  \caption{Effective mass squared induced by the noncanonical coupling ($m^2_{eff,G}$ defined in~\eqref{eqn:eff_mass_G}) for $\phi_{bg} = \phi_0\sin(t)$ and several choices of noncanonical coupling to $\chi$.  In all cases we have ignored expansion of the universe, so that $\phi_0$ is a constant.}
+  \label{fig:eff_frequencies_sine_osc}
+\end{figure}
 
-\subsection{$G(\phi) = e^{\gamma\phi}$}
+In order to assess the transfer of energy from the inflaton $\phi$ into the preheat field $\chi$, it is useful to define
+\begin{align}
+  \rho_\chi &= G(\phi)\left(\frac{\dot{\chi}^2}{2} + \frac{(\nabla\chi)^2}{2a^2}\right) + W(\chi) \notag \\
+  \rho_\phi &= \frac{\dot{\phi}^2}{2} + \frac{(\nabla\phi)^2}{2a^2} + V^{inf}(\phi)
+  \label{eqn:rho_chi_phi}
+\end{align}
+Similarly, in order to measure the transfer of energy from the homogeneous condensate into fluctuations, it is also useful to consider the energy density stored in field gradients
+\begin{equation}
+  \rho_{grad} = \frac{1}{2a^2}\left((\nabla\phi)^2 + G(\phi)(\nabla\chi)^2\right)
+\end{equation}
+
+\subsection{$G(\phi) = e^{2\gamma\phi}$}
 \begin{equation}
   G(\phi) = e^{2\gamma\phi}
 \end{equation}
@@ -108,35 +139,67 @@ This gives
   \label{eqn:frequency_exponential}
 \end{equation}
 \begin{figure}
-  \includegraphics[width=0.45\linewidth]{{{sine_hill}}}
-  \includegraphics[width=0.45\linewidth]{{{lame_hill_chart}}}
-  \caption{Floquet chart for ~\eqref{eqn:frequency_exponential} assuming that the background oscillations $\phi_{bg}$ are occur in an $m^2\phi^2$ potential and are sinusoidal (\emph{left}) or are in a $\lambda\phi^4$ potential and jacobi elliptic functions (\emph{right}).{\bf Ignore the graph title on the right, the derivatives of $\phi$ were used, not $\phi$ itself.}}
+%  \includegraphics[width=0.3\linewidth]{{{floquet_sine_exponential_mass0}}}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_exponential_mass0.01}}}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_exponential_mass0.1}}}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_exponential_mass1}}}
+
+  \caption{Floquet chart for~\eqref{eqn:frequency_exponential} assuming background oscillations $\phi_{bg} = \phi_0\cos(mt)$ for several choices of mass for the $\chi$ field.}
   \label{fig:floquet_exponential}
 \end{figure}
-From figure~\ref{fig:floquet_exponential} we see 
 
 \begin{figure}
-  \includegraphics[width=0.32\linewidth]{{{energy_partition_logscale_alpha3}}}
-  \includegraphics[width=0.32\linewidth]{{{phi_fluc_alpha3}}}
-  \includegraphics[width=0.32\linewidth]{{{chi_fluc_alpha3}}} \\
-  \includegraphics[width=0.32\linewidth]{{{energy_partition_logscale_alpha5}}}
-  \includegraphics[width=0.32\linewidth]{{{phi_fluc_alpha5}}}
-  \includegraphics[width=0.32\linewidth]{{{chi_fluc_alpha5}}} \\
-  \includegraphics[width=0.32\linewidth]{{{energy_partition_logscale_alpha7}}}
-  \includegraphics[width=0.32\linewidth]{{{phi_fluc_alpha7}}}
-  \includegraphics[width=0.32\linewidth]{{{chi_fluc_alpha7}}}
-  \caption{Evolution of the distribution of energy densities and the field fluctuations for $\gamma = $ 1.5 (\emph{top row}), 2.5 (\emph{middle row}), 3.5 (\emph{top row}) and $V(\phi) = \lambda\phi^4/4$.  $P_\alpha$ stands for the (unnormalized) power spectrum of $\alpha$.  We have defined $\rho_\phi = \frac{\dot{\phi}^2}{2a^2} + \frac{(\nabla\phi)^2}{2} + \frac{\lambda\phi^4}{4}$ and $\rho_\chi = e^{\gamma\phi}\frac{a^2\dot{\chi}^2+(\nabla\chi)^2}{2a^2}$.  For the smaller values of $\gamma$, the self-resonant instability of $\phi$ is the dominant mechanism for fluctuation generation.  For larger $\gamma$ values, the tachyonic instability in $\chi$ causes the fluctuations to become nonlinear only a {\bf few?} oscillations after the start of preheating.  {\bf Color code lines by oscillation number to make this clear} Rescattering effects then produce fluctuations in $\phi$ as well.}
+%  \includegraphics[width=0.45\linewidth]{{{energy_grad_vary_gamma_n256}}}
+  \includegraphics[width=0.45\linewidth]{{{energy_grad_vary_gamma_exponential_l4_n128_l20}}}
+  \includegraphics[width=0.45\linewidth]{{{energy_grad_vary_gamma_exponential_m2_n128_l20}}}
+  \caption{Transfer of energy into the preheat field $\chi$ and fluctuations as we vary $\gamma M_P$.  The solid lines are the fraction of energy stored in the $\chi$ field with $\rho_\chi = e^{\gamma\phi}\left(\frac{\dot{\chi}^2}{2}+\frac{(\nabla\chi)^2}{2a^2}\right) + m^2_\chi\chi^2/2$.  The dashed semitransparent lines are the fraction of energy stored in field gradients.  The left figure shows results for $V(\phi)=\lambda\phi^4/4$ and the the right panel for $V(\phi)=m^2\phi^2/2$.  All simulations in the left panel used a lattice with $N_{lat}=128^3$ lattice sites and a comoving side length $\sqrt{\lambda}M_PL=20$.  The runs in the right panel instead used $N_{lat}=128^3$ and $m_\phi L = 10$.}
 \end{figure}
 
-\subsection{$G(\phi)=e^{\gamma\phi^2/2}$}
+\begin{figure}
+  \includegraphics[width=0.32\linewidth]{{{weff_exponent_alpha3_l20_phi4}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_spec_exponent_alpha3_l20_phi4}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_spec_exponent_alpha3_l20_phi4}}} \\
+  \includegraphics[width=0.32\linewidth]{{{weff_exponent_alpha5_l20_phi4}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_spec_exponent_alpha5_l20_phi4}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_spec_exponent_alpha5_l20_phi4}}} \\
+  \includegraphics[width=0.32\linewidth]{{{weff_exponent_alpha7_l20_phi4}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_spec_exponent_alpha7_l20_phi4}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_spec_exponent_alpha7_l20_phi4}}}
+  \caption{Evolution of the equation of state $w=\bar{P}/\bar{\rho}$ and the field fluctuations for $\gamma M_P= $ 1.5 (\emph{top row}), 2.5 (\emph{middle row}), 3.5 (\emph{top row}) and $V(\phi) = \lambda\phi^4/4$.  $P_\alpha$ stands for the (unnormalized) power spectrum of $\alpha$.  $\rho_\chi$ is defined in~\eqref{eqn:rho_chi_phi}.  For the fluctuation spectra, for the first four oscillations of $\phi$ we have plotted the spectra at time steps $\sqrt{\lambda}M_P d\tau=0.5$, and $\sqrt{\lambda} M_P d\tau = $ for the remainder of the evolution.  As well, we have color-coded the lines based on the oscillations of $\phi$ with blue, red, green and purple corresponding to the first, second, third and fourth oscillations respectively.  Earlier times are in a lighter shade than later times.  The evolution after the fourth oscillation are colored in shades of orange.  In the top two rows, the amplification of $\chi$ terminates in the linear regime, and the self-resonance of $\phi$ is the dominant mechanism for fluctuation generation that eventually leads to the breakup of the inflaton condensate.  Meanwhile, for $\gamma M_P = $3.5, the tachyonic instability in $\chi$ causes the fluctuations to become nonlinear after a few oscillations of $phi$.}
+  \label{fig:exponent_spectra_phi4}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.32\linewidth]{{{weff_exponent_alpha10_l20}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_spec_exponent_alpha10_l20}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_spec_exponent_alpha10_l20}}} \\
+
+  \includegraphics[width=0.32\linewidth]{{{weff_exponent_alpha12.5_l10}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_spec_exponent_alpha12.5_l10}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_spec_exponent_alpha12.5_l10}}}
+
+  \caption{Evolution of the equation of state and field fluctuation spectra for the exponential coupling $G(\phi)=e^{2\gamma\phi}$ and $V(\phi) = m^2\phi^2 / 2$.  As with that background oscillations for the $\phi^4$ potential, we have $\rho_\phi = \frac{\dot{\phi}^2}{2a^2} + \frac{(\nabla\phi)^2}{2} + \frac{m^2\phi^2}{2}$ and $\rho_\chi = e^{\gamma\phi}\frac{a^2\dot{\chi}^2+(\nabla\chi)^2}{2a^2}$.  In the top row we have $\gamma M_P = 5$ and in the bottom row we have $\gamma M_P = 6.25$.  The color coding of the power spectrum lines are the same as~\figref{fig:exponent_spectra_phi4}.}
+\end{figure}
+
+
+\subsection{$G(\phi)=e^{\gamma\phi^2}$}
 \begin{equation}
-  G(\phi) = e^{\gamma\phi^2/2}
+  G(\phi) = e^{\gamma\phi^2}
+  \label{eqn:coupling_gaussian}
 \end{equation}
 \begin{equation}
-  \omega_k^2 = k^2 - \gamma\ddot{\phi}_{bg}\phi_{bg} - (\gamma^2\phi_{bg}^2-\gamma)\dot{\phi}_{bg}^2
+  \omega_k^2 = k^2 - \gamma\ddot{\phi}_{bg}\phi_{bg} - (\gamma^2\phi_{bg}^2+\gamma)\dot{\phi}_{bg}^2
 \end{equation}
 \begin{figure}
-  \caption{Floquet chart for Gaussian}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_gaussian_mass0}}}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_gaussian_mass0.01}}}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_gaussian_mass0.1}}}
+  \caption{Floquet charts for the gaussian noncanonical coupling $G(\phi)=e^{\gamma\phi^2}$ for several choices of $m_\chi^2$ assuming background oscillations $\phi_{bg}=\phi_0\cos(m_\phi t)$.}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{energy_grad_vary_alpha_gaussian_m2_n128_l20}}}
+  \caption{Fraction of energy stored in $\chi$ as defined in~\eqref{eqn:rho_chi_phi} (\emph{solid line}) and gradient energy (\emph{dashed line} as we vary the parameter $\alpha M_P^2$ for the gaussian noncanonical coupling $G(\phi)=e^{\alpha\phi^2}$.  The $\phi$ potential was $V(\phi)=m_\phi^2 \phi^2 / 2$ and we used $N_{lat}=128^3$ with a comoving side length of $m_\phi L = 20$.}
 \end{figure}
 
 \subsection{$G(\phi)=(1+\xi\phi^2)^{-1}$}
@@ -148,9 +211,23 @@ From figure~\ref{fig:floquet_exponential} we see
   \label{eqn:frequency_conformal_flatten}
 \end{equation}
 \begin{figure}
-  \includegraphics[width=0.45\linewidth]{{{conformal_sine}}}
-  \includegraphics[width=0.45\linewidth]{{{conformal_jacobi}}}
+  \includegraphics[width=0.45\linewidth]{{{floquet_sine_flatten_mass0_big}}}
+  \includegraphics[width=0.45\linewidth]{{{floquet_sine_flatten_mass0.01_big}}} \\
+  \includegraphics[width=0.45\linewidth]{{{floquet_sine_flatten_mass0.1_big}}}
+  \includegraphics[width=0.45\linewidth]{{{floquet_sine_flatten_mass1_big}}}
   \caption{Floquet chart for the oscillations with effective frequency given by~\eqref{eqn:frequency_conformal_flatten}.  Once again, the left panel corresponds to a background oscillation in a quadratic potential and the right panel to background oscillations in a quartic potential.}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{energy_grad_vary_xi_flatten_m2_n128_l10}}}
+  \includegraphics[width=0.45\linewidth]{{{energy_grad_vary_m_flatten_m2_n128_l10}}}
+  \caption{Fraction of energy stored as $\rho_\chi$ and $\rho_{grad}$ for background inflaton oscillations in an $m_\phi^2\phi^2/2$ potential with the noncanonical coupling~\eqref{eqn:frequency_conformal_flatten}.  In the left figure we vary $\xi M_P^2$ while holding $m_\chi^2 = 0$ and in the right figure we vary $m_\chi^2/m_\phi^2$ while holding $\xi M_P^2 = 5000$ fixed.}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.32\linewidth]{{{weff_flatten_xi1000_l10}}}
+  \includegraphics[width=0.32\linewidth]{{{phi_spec_flatten_xi1000_l10}}}
+  \includegraphics[width=0.32\linewidth]{{{chi_spec_flatten_xi1000_l10}}}
+  \caption{Evolution of the equation of state and fluctuations in $\phi$ and $\chi$ for coupling $G(\phi)=(1+\xi\phi^2)^{-1}$ with $\xi M_P^2=1000$ and $V(\phi)=m^2\phi^2/2$.  The color coding of the power spectrum lines are the same as~\figref{fig:}.}
 \end{figure}
 
 \subsection{$G(\phi) = 1+\xi\phi^2$}
@@ -162,10 +239,17 @@ From figure~\ref{fig:floquet_exponential} we see
   \label{eqn:frequency_quadratic_kinetic}
 \end{equation}
 \begin{figure}
-  \includegraphics[width=0.45\linewidth]{{{running_sine}}}
-  \includegraphics[width=0.45\linewidth]{{{lame_exponential_kinetic_chart}}}
-  \caption{Floquet chart for~\eqref{eqn:frequency_quadratic_kinetic} with $\phi_{bg}$ in a quadratic potential on the left and a quartic potential on the right.}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_running_mass0}}}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_running_mass1}}}
+  \includegraphics[width=0.32\linewidth]{{{floquet_sine_running_mass10}}}
+  \caption{Floquet chart for~\eqref{eqn:frequency_quadratic_kinetic} with $\phi_{bg} = \phi_0\cos(m_\phi t)$ for several choices of the preheat field mass $m_\chi^2$.}
 \end{figure}
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{energy_grad_vary_xi_running_m2_n128_l20}}}
+  \includegraphics[width=0.45\linewidth]{{{energy_grad_vary_m_running_m2_n128_l20}}}
+  \caption{Partition of energy within our simulation volume as we vary the noncanonical coupling $\xi$ with $m_\chi^2 = 0$ (\emph{left}) and as we vary the mass $m_\chi^2/m_\phi^2$ for fixed noncanonical coupling $\xi M_P^2 = 5000$ (\emph{right}).  Both plots used an inflaton potential $V^{inf}(\phi) = m_\phi^2\phi^2/2$.  The solid lines are the fraction of the total energy in the $\chi$ field, while the dashed semitransparent lines are the fraction of the total energy stored as gradient energy.  All simulations used lattices with $N_{lat}=128^3$ and comoving side length $m_\phi L = 20$.}
+\end{figure}
+
 
 \section{Direct Potential Couplings and Caustic Formation}
 {\bf How much of this should go in here and how much in the ballistics paper?}
@@ -239,7 +323,126 @@ Do running kinetic Higgs model and nonminimally coupled gravity with conformal f
   \mathcal{L} = -\frac{1}{2}\left(1+\kappa\phi^2\right)\partial_\mu\phi\partial^\mu\phi - \lambda\frac{\phi^4}{4}
 \end{equation}
 
-\subsection{Conformally Flattenned Potentials}
+\section{Nonminimal Gravitational Coupling}
+A general class of models which can lead to the noncanonical couplings described above are scalar fields nonminimally coupled to gravity with Jordan frame action
+\begin{equation}
+  \frac{\mathcal{L}_J}{\sqrt{|\hat{g}|}} = \frac{M_P^2}{2}f^2(\phi)\hat{R} - \frac{\partial_\mu\phi\partial^\mu\phi}{2} - \frac{\partial_\mu\chi\partial^\mu\chi}{2} - \lambda V^{inf}(\phi) - V(\phi,\chi) \, .
+\end{equation}
+We restrict ourselves to cases where only a single field has a nonminimal gravitational coupling and for this paper we take that field to be the inflaton.
+After performing a conformal transformation $g_{\mu\nu} = f^2(\phi)\hat{g}_{\mu\nu}$, we obtain the Einstein frame action
+\begin{equation}
+  \frac{\mathcal{L}_E}{\sqrt{|g|}} = \frac{M_P^2}{2}R -\frac{1+6(\partial_\phi f)^2}{f(\phi)^2} \frac{\partial_\mu\phi\partial^\mu\phi}{2} - \frac{\lambda V^{inf}(\phi)}{f(\phi)^4} - \frac{1}{2f(\phi)^2}\partial_\mu\chi\partial^\mu\chi - \frac{V(\phi,\chi)}{f(\phi)^4}
+\end{equation}
+A subclass of these models that have received considerable attention recently impose the additional constraint that $f^2(\phi) = 1 + \xi\sqrt{V^{inf}(\phi)}$,
+which yields universal predictions for the cosmological parameters $n_s=1-8/N$ {\bf Check this} and $r=12/N_e^2$ in the $\xi \gg 1$ limit.
 
+\subsection{Higgs Inflation}
+{\bf Possible thing to look at, can we make oscillons in this model since the potential flattens out away from the minimum?}
+One well studied model of precisely this form is Higgs inflation with $f(\phi)^2 = 1+\xi\phi^2$.
+From the preheating point of view, this model is particularly interesting as all of the interactions between the Higgs and other SM degrees of freedom are known.
+Therefore, under the assumption that no additional degrees of freedom are excited during the stage of oscillations about the minimum, this provides a predictive model for the preheating dynamics.
+{\bf Of course, this involves studying gauge-fields and fermions, not production of scalar fields.  The gauge fields should qualitatively behave the same as scalars, but fermions will have Fermi blocking effects at large occupation numbers (perhaps leading to the formation of a condensate from preheating?).  We won't tackle these issues here.}
+
+The initial field values were determined by the potential slow-roll conditions $\epsilon_V=1$
+\begin{equation}
+  \phi_{end}^2 = \frac{\sqrt{1+32\xi(1+6\xi)}-1}{2\xi(1+6\xi)} \qquad \dot{\phi}_{end} = -\frac{2\phi_{end}}{\sqrt{3}(1+\xi(1+6\xi)\phi_{end}^2)} \, .
+\end{equation}
+For $\xi \gtrsim 1$, we have $\lambda^{-1/2} \approx 47000/\xi$ to obtain the correct amplitude of primordial fluctuations during inflation, with the overall constant depending somewhat on our assumptions about the post-inflation evolution (specifically the number of efolds).
+{\bf This should be a temporary approach.  Better choice is to numerically evolve to determine initial conditions along attractor at $\epsilon = 1$ then start the simulations from there (or even do the linear part of the resonance separately, although then the fields and momenta become correlated initially).}
+In~\figref{fig:energy_partition_higgs} we plot the fraction of the energy stored in gradients as we vary $\xi M_P^2$ while simultaneously tuning $\lambda$ to maintain the same amplitude of primordial scalar fluctuations.  Without direct potential couplings to the field $\chi$, only $\phi$ develops large inhomogeneities.
+This is in accord with our previous results, where we found that we required $\xi \phi_0^2 \sim 10^3$ in order to excite the $\chi$ field with the noncanonical coupling appropriate for the conformally flattenned Higgs model, albeit with a different background $\phi$ evolution.
+{\bf Make sure that $\chi$ remaining unexcited isn't an artifact of the chosen size of the simulation cube.}
+
+\begin{figure}
+  \includegraphics[width=0.45\linewidth]{{{conformal_flatten_potentials_n60}}}
+  \caption{Potential seen by the canonical field $\phi_{canonical}$ driving inflation with $\lambda$ adjusted to give the correct amplitude for the scalar power spectrum, assuming the appropriate scale exited $N_e=60$ efolds before the end of inflation.}
+\end{figure}
+
+\begin{figure}
+  \caption{Evolution of the background oscillations in $\phi$ for $\xi=10$ and $\xi=100$.  The stage of oscillations in a $\phi^4$ leading to a damped Jacobi elliptic cosine is preceded by a stage where the field feels the nonquartic nature of the potential away from the minimum.}
+\end{figure}
+
+\begin{figure}
+  \caption{Evolution of effective mass for the $\phi$ and $\chi$ fluctuations for several choices of $\xi$ and couplings to $\chi$.}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.5\linewidth]{{{energy_grad_vary_xi_higgs_n32}}}
+  \caption{Evolution of energy densities for several choices of $\xi$ coupled to a massless $\chi$ with no direct potential couplings.  The solid lines are the gradient energy in $\phi$ and the dashed lines the gradient energy in $\chi$.  In all cases considered, only the $\phi$ field experiences parametric resonance and becomes inhomogeneous.}
+  \label{fig:energy_partition_higgs}
+\end{figure}
+
+\begin{figure}
+  \caption{Evolution of field spectra for several choices of $\xi$ and couplings to $\chi$.}
+\end{figure}
+For $\xi \ll 1$ this model reduces to $\lambda\phi^4$.  For $\xi \gg 1$, the effective coupling constants arising from the noncanonical kinetic term are $\xi\phi_{end}^2 \sim 1$, so that strong resonance of $\chi$ does not occur solely from the minimal couplings arising from the conformal transformation.
+However, as with the $\xi=0$ case, a coupling $g^2\phi^2\chi^2$ (or $\sigma\phi\chi^2$) will drive the growth of fluctuations in $\chi$.
+
+%{\bf Further, for large $\xi$, we have a much larger $\lambda$.  This further suppresses the effective couplings, which are $\phi_0/M_{osc}$.} 
+%Some things to keep in mind, for $\xi \gg 1$, we have $\lambda \propto \xi^2$.
+%The initial fluctuation amplitudes scale as $\sqrt{\lambda}$ while the initial oscillation amplitude for $\phi$ scales as $\xi^{-1}$ {\bf check this one}.
+%The strength of the instability scales as {\bf check this} so that we expect the fluctuations to become nonlinear at {\bf is this modified for the new coupling?}.
+
+\section{Dynamics in a Decoupled Sector}
+Take $\mathcal{L}_{M}$ to have no direct couplings to the inflaton (except those induced by the conformal transformation into the Einstein frame).
+What are the possible dynamics?  Fields become light during inflation for some forms of $f(\phi)^2$, so they can develop large fluctuations.  What happens when the interactions turn on due to evolution of $\phi$?
+
+\section{Appendix}
+Brief description of initial conditions and lattice discretization.
+Due to the noncanonical nature of the fields, our prescription for initialization of fluctuations is slightly modified from the canonical case.
+\subsection{Initial Conditions}
+Denoting a generic field by $\phi$ we have
+\begin{equation}
+  \phi_{nc} = \phi_{nc}(\phi_{c}) \approx \bar{\phi_{nc}} + \frac{\partial\phi_{nc}}{\partial\phi_{c}}\delta\phi_{c} \implies \delta\phi_{nc} \approx \frac{\partial\phi_{nc}}{\partial\phi_{c}}\delta\phi_{c}
+\end{equation}
+For the $\chi$ field (where it's noncanonical piece is determined by another field), we set $\chi_c = \sqrt{G(\phi)}\chi$ as the canonically normalized field (and since $a=1$ at the start of our simulations we can ignore it in the normalization).
+{\bf This isn't quite right since this transformation will induce an additional terms into the kinetic piece for $\phi$, which then modifies the $\phi$ initial conditions (which I'm not accounting for)}
+As with the standard approach, we take $\delta\phi_{c}$ and $\delta\dot{\phi}_{c}$ to be independent Gaussian random fields with spectra $\frac{1}{\sqrt{2\omega_k}}$ and $\delta\dot{\phi} = \sqrt{\omega_k/2}$ respectively, where $\omega_k$ is the effective frequency of the canonically normalized field.\footnote{Treating the field and its momentum as uncorrelated is correct on subhorzon scales, but for superhorizon scales the squeezing of the modes into a two-mode squeezed state induces large correlations between $\phi$ and $\Pi$.  In a proper treatment these must be accounted for.}
+
+\subsection{Lattice Discretization}
+{\bf Use better notation, and check factors of $M_P$.}
+We evolve Hamilton's equations for our latticized field system.
+The equations of motion are obtained by directly discretizing the action then performing a Legendre transform to obtain the corresponding Hamiltonian.
+
+For the metric $ds^2=-dt^2 + a^2(t)dx^2$, %(with Ricci scalar $R=-6\frac{\ddot{a}}{a}+H^2}$)
+we take the metric variables to be $y_a = a^{3/2}$ so that $\Pi_a = -8M_P^2N_{lat}\dot{y}_a/3=-4N_{lat}Ha^{3/2}$, leading to the Hamiltonian
+\begin{equation}
+  \mathbb{H} = \int dt \sum_i \left[y_a^2\left(\Pi^A_i\frac{G^{-1}_{AB}}{2y_a^4}\Pi^B_i + \nabla\phi^A_i\frac{G_{AB}}{2y_a^{4/3}}\nabla\phi_i^B + V\right) - \frac{3\Pi_a^2}{16M_P^2N_{lat}^2} \right]
+\end{equation}
+From this we derive Hamilton's equations
+\begin{align}
+  \frac{d \phi^A_i}{dt} &= G^{-1}_{AB}\frac{\Pi^B}{y_a^2} \\
+  \frac{d \Pi^A_i}{dt} &= -\frac{1}{2y_a^2}\Pi^T\frac{\delta G^{-1}}{\delta\phi^A}\Pi - y_a^2\partial_{\phi^A}V  + y_a^{2/3}G\nabla^2\phi^A - \frac{y_a^{2/3}}{2}\nabla\phi^T\frac{\delta G}{\delta \phi^A}\nabla\phi \\
+  \frac{d y_a}{dt} &= -\frac{3\Pi_a}{8N_{lat}}  \\
+  N_{lat}^{-1}\frac{d \Pi_a}{dt} &= \frac{1}{N_{lat}}\left(\sum_i \frac{\Pi^TG^{-1}\Pi^t}{y_a^3} - 2y_aV - y_a\frac{1}{3a^2}\nabla\phi^TG\nabla\phi \right) = 2a^{3/2} \langle P \rangle
+\end{align}
+With the metric $ds^2 = a^2(\tau)(-d\tau^2 + dx^2)$ %(with Ricci scalar $R=6\frac{a''}{a^3}$)
+we instead choose $y_a = a$ so $\Pi_a = -6N_{lat}a^2H = -6N_{lat}y_a'$
+with Hamiltonian
+\begin{equation}
+  \mathbb{H} = y_a^4\int dt \sum_i \left[ \frac{1}{2y_a^6}\Pi_i^TG^{-1}\Pi_i + \frac{1}{2y_a^2}(\nabla\phi)^TG(\nabla\phi) + V - \frac{\Pi_a^2}{12M_P^2N_{lat}^2}\right]
+\end{equation}
+The corresponding equations of motion are
+\begin{align}
+  \frac{d \phi^A_i}{d\tau} &= G^{-1}_{AB}\frac{\Pi^B}{y_a^2} \\
+  \frac{d \Pi^A_i}{d\tau} &= -\frac{1}{2y_a^2}\Pi^B_i\frac{\delta G^{-1}_{BC}}{\delta \phi_i^A}\Pi_i^C - y_a^4\partial_{\phi^A}V - \frac{y_a^2}{2}(\nabla\phi)^T\frac{\delta G}{\delta \phi^A}(\nabla\phi) + y_a^2G\nabla^2\phi\\
+  \frac{d y_a}{d\tau} &= -\frac{\Pi_a}{6N_{lat}} \\
+  N^{-1}_{lat}\frac{d \Pi_a}{d\tau} &= \frac{1}{N_{lat}}\sum_i \frac{\Pi^TG^{-1}\Pi}{y_a^3} - 4y_a^3V - y_a\nabla\phi^TG\nabla\phi
+\end{align}
+
+The only subtlety in the above procedure comes from our discretization of  $\nabla\phi^TG(\phi)\nabla\phi$.
+Our prescription for dealing with the derivatives of the fields is to discretize the gradient energy as
+\begin{equation}
+  \nabla\phi_IG^{IJ}(\vec{\phi})\nabla\phi_J \equiv \sum_{\alpha} d_{\alpha}G(\phi(x_i))(\phi_I(x_{i+\alpha})-\phi_I(x_i))(\phi_J(x_{i+\alpha})-\phi_J(x_i))
+\end{equation}
+where the coefficients $d_\alpha$ represent a choice of spatial discretization of the system, and we assume a symmetric stencil $d_{-\alpha}=d_\alpha$.
+By working directly with the discretized Hamiltonian, we see that self-consistency requires the laplacian operator be defined as
+%\begin{equation}
+%\nabla\phi^T\frac{\delta G}{\partial \delta\phi_i}\nabla\phi =
+%\end{equation}
+%and
+\begin{equation}
+  G_{BA}(\phi)\nabla^2\phi^A \to \sum_{\alpha}2d_\alpha \frac{G_{BA}(\phi_{i+\alpha})+G_{BA}(\phi_i)}{2}\left(\phi^A_{i+\alpha}-\phi^A_i\right) \, .
+\end{equation}
 
 \end{document}
